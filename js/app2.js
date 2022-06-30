@@ -18,6 +18,7 @@ const app = Vue.createApp({
     `*/
     data(){
         return {
+            //datos reactivos
             mensaje: 'Mensaje desde un atributo DATA',
             mensaje2: 'Prueba2'
         }
