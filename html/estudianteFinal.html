@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="myApp">
+        <h2>Ingreso Estudiantes</h2>
+        <label for="idNombre">Nombre</label>
+        <br>
+        <input type="text" name="" id="idNombre" v-model="mensaje" v-on:keypress.enter="eventoKeyDesestructurado">
+        <br>
+        <label for="idApellido">Apellido</label>
+        <br>
+        <input type="text" name="" id="idApellido" v-model="apellido" v-on:keypress.enter="eventoKeyDesestructurado">
+        <br>
+        <label for="idEdad">Edad</label >
+        <br>
+        <input type="text" name="" id="idEdad" v-model="edad" v-on:keypress.enter="eventoKeyDesestructurado">
+        <br>
+        <button v-on:click="agregarEstudiante('I')">Agregar Inicio</button>
+        <button v-on:click="agregarEstudiante('F')">Agregar Fin</button>
+        <hr>
+        <ul>
+            <li v-for="({nombre,apellido,edad},index) in lista">
+                <h3 v-if="false">{{index + 1}}: {{nombre}} - {{apellido}} - {{edad}}</h3>
+            </li>
+        </ul>
+        
+
+    </div>
+    <script src="../js/estudianteFinal.js"></script>
+</body>
+
+</html>
