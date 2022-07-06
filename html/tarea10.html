@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 10</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="../css/tarea10.css">
+</head>
+
+<body>
+    <div id="myApp">
+        <fieldset>
+            <legend>Ingreso de Tareas</legend>
+
+            <label for="idNombre">Nombre de la Tarea</label>
+            <br>
+            <input type="text" name="" id="idNombre" v-model="nombre">
+            <br>
+
+            <label for="idDes">Descripción de la Tarea</label>
+            <br>
+            <input type="text" name="" id="idDes" v-model="des">
+            <br>
+
+            <label for="idDur">Duración</label>
+            <br>
+            <input type="text" name="" id="idDur" v-model="dur">
+            <br>
+
+            <button v-on:click="agregarTarea">Ingresar</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tareas Por Hacer</legend>
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-0pky">
+                            #
+                        </th>
+                        <th class="tg-0pky">
+                            Nombre
+                        </th>
+                        <th class="tg-0pky">
+                            Descripción
+                        </th>
+                        <th class="tg-0pky">
+                            Duración (Horas)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="({nombre,des,dur},index) in lista">
+                        <td class="tg-hmp3">
+                            {{index+1}}
+                        </td>
+                        <td class="tg-hmp3">
+                            {{nombre}}
+                        </td>
+                        <td class="tg-hmp3">
+                            {{des}}
+                        </td>
+                        <td class="tg-hmp3">
+                            {{dur}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+    <script src="../js/tarea10.js"></script>
+</body>
+
+</html>
